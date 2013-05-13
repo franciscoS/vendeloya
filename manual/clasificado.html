@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<title>Documentación - Clasificados para todos! </title>
+<link type="text/css" rel="stylesheet" href="../css/style.css"/>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=js&skin=sunburst"></script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div class="center">
+			<div id="logo"><img src="../media/template/vendeloyalogo.png"></div>
+			<div id="banners"><img src="../media/b468x120.gif"></div>
+		</div><!-- .center -->
+
+	</div><!-- #header -->
+	
+	<div id="roof">
+		
+			<div id="menu">
+				<a href="index.html">INICIO</a>
+				<a href="usuario.html">USUARIO</a>
+				<a href="clasificado.html">CLASIFICADO</a>
+				<a href="qr.html">MEDIA Y QR</a>
+				<a href="bd.html">BASE DE DATOS</a>
+			</div> <!-- #menu -->
+		
+	</div>
+	
+	<div id="clear"></div>
+	
+	<div id="container">
+		<div id="center_container">
+			<div id="content">
+				<h2>Función edit(array())</h2>				
+				<p>Esta función edita un clasificado existente a través de parámetros recibidos a través de un arreglo (array)</p>
+				
+				<p>La función recibe cualquiera de los siguientes parámetos y deben estar presentes en el areglo sin importar que se encuentren vacíos</p>
+				
+				<p class="prettyprint">El id del clasificado es el valor mas importante pues indica cuál es el registro que se editará y único por ser de tipo llave<br>
+				- idclasificado (numérico, llave)<br>
+				- titulo (alfanumérico)<br>
+				- precio (numérico flotante)<br>
+				- preciodiv (numérico 1 caracter)<br>
+				- detalles (alfanumérico)<br>
+				- marca (alfanumérico)<br>
+				- modelo (alfanumérico)<br>
+				- estado (alfanumérico)</p>
+				
+				<pre class="prettyprint lang-php" id="PHP">
+&lt;?php
+
+// Asigna datos para crear un nuevo clasificado 
+$new_clasificado_data = array(
+    'titulo'=&gt;'Mustang', 'precio'=&gt;'36000', 'preciodiv'=&gt;'1', 'detalles'=&gt;'Excelente auto restaurado y en perfectas condiciones Mustang 64 Cobra todo un clasico', 'marca'=&gt;'Ford', 'modelo'=&gt;'Mustang', 'estado'=&gt;'1964', 'idusuario'=&gt;'3', 'nombreimagen'=&gt;'mustang64.jpg'
+);
+// Genera el objeto para crear el clasificado
+$clasificado3 = new Clasificado();
+// Crea el clasificado con los datos contenidos en $new_clasificado_data
+$clasificado3-&gt;set($new_clasificado_data);
+
+// Edita del clasificado agregado anteriormente
+// En este caso sabemos que su ID es 2
+// Para editar debemos conocer el ID que se quiere editar
+$edit_clasificado_data = array(
+    'idclasificado'=&gt;'2', 'titulo'=&gt;'Mustang Cobra 64 Cl&aacute;sico', 'precio'=&gt;'30000', 'preciodiv'=&gt;'0', 'detalles'=&gt;'Excelente opci&oacute;n restaurado y en perfectas condiciones Mustang 64 Cobra todo un clasico', 'marca'=&gt;'Ford', 'modelo'=&gt;'Mustang Cobra', 'estado'=&gt;'1964'
+);
+// Genera el objeto para editar el clasificado
+$clasificado4 = new Clasificado();
+// Edita el clasificado con los datos contenidos en $edit_clasificado_data
+$clasificado4-&gt;edit($edit_clasificado_data);
+
+// Obtenemos los datos que se editaron para ver los cambios
+$clasificado5 = new Clasificado();
+$clasificado5-&gt;get(2);
+
+?&gt;
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Obteniendo valores del objeto&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- Obtiene el modelo que asigna a variable --&gt;
+&lt;?php
+$mod = $clasificado5-&gt;modelo;
+?&gt;
+&lt;!-- Imprime &quot;El auto es un Ford Mustang&quot; --&gt;
+El auto es un &lt;?php echo $clasificado5-&gt;marca ?&gt; &lt;?php echo $mod ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;	
+				</pre>
+				
+			</div> <!-- #content -->
+			<div id="sidebar">
+			<div id="title">Bienvenido a la API</div>
+					<ul>
+						<li><b>API: </b> Interfaz de programación de aplicaciones (API, Application Programming Interface) es el conjunto de funciones y procedimientos (o métodos, en la programación orientada a objetos) que ofrece cierta biblioteca para ser utilizado por otro software como una capa de abstracción. Son usadas generalmente en las bibliotecas.</li>
+						<li>Así programar funciones en el sistema es genial!</li>
+					</ul>				
+			</div> <!-- #sidebar -->
+		</div> <!-- #center_conatiner -->
+	</div> <!-- #container -->
+	
+			<div id="clear"></div>	
+	
+	<div id="footer">
+		<div id="center_footer">
+			<span>VendeloYa.Net &copy; Derechos Reservados 2013</span>
+		</div> <!-- #center_footer -->
+	</div> <!-- #footer -->
+
+</div> <!-- #wrapper -->
+</body>
+</html>

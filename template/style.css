@@ -1,0 +1,184 @@
+*{ margin: 0px; padding: 0px;font-family: arial; }
+
+#wrapper{
+	width:100%;
+	/*background:#074266 url(body_bg.jpg) left repeat;*/
+	background:#074266 url(corkboard.jpg) left repeat
+	}
+.center{
+	width:980px;
+	margin:0 auto;
+}	 
+ul{
+	list-style: none;
+	}
+a {
+	text-decoration: none;
+	}
+#clear{
+	clear:both;
+	}
+
+	
+#header{
+	background:#074266 url(header_bg.jpg) center repeat-x;
+	color:#ddd;
+	}
+	
+#header .center{
+	height:220px;
+	/*background:	#053350; */
+	}
+	
+
+#logo{
+	float:left;
+	font-size:40px;
+	/*line-height: 220px;*/
+	margin-top:10px;
+	text-align: center;
+	width:370px;
+	}
+
+#roof{
+	background:#074266 url(body_bg.jpg) left repeat;
+	color:#fff;
+	height:38px;
+	}
+	
+#menu{
+	float: right;
+	height: 26px;
+	margin: 0 auto;
+	width: 980px;
+	}
+#menu a{
+	display:inline-block;
+	color: #fff;
+	background:#0B610B;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 10px 12px;
+	}	
+#menu a:hover{
+	background:#1E90FF; 
+	}
+
+#container{
+	height: auto;
+	}
+#center_container{
+	height: auto;
+	width: 980px;
+	margin: 0 auto;
+	}
+#sidebar{
+	float:left;
+	width:280px;
+	margin:10px;
+	padding-bottom: 10px;
+	background:#fff;
+
+	}
+#sidebar #title{
+	line-height: 30px;
+	padding: 0 0 0 15px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	background:#1E90FF;
+	}
+#sidebar ul{
+	list-style: none;
+	width:280px;
+	}
+#sidebar li{
+	padding:5px 5px;
+	font-size: 13px;
+	}
+#sidebar a{
+	color:#000;
+	}
+
+#content{
+	width:670px;
+	margin:10px 0px 0px 10px;
+	background: #fff;
+	/*height:300px;*/
+	font-size:14px;
+	float:left;
+	}
+#content h2{
+	padding: 10px 0 10px 20px;
+	}
+#content p{
+	margin:15px;
+	}
+
+#footer{
+	height:130px;
+	}
+#center_footer{
+	background:#0B610B;
+	height: 130px;
+	width: 980px;
+	margin:0 auto;
+	}
+#left_footer,#right_footer {
+	width:450px;
+	padding:20px;
+	float:left;
+	}
+#left_footer b{
+	color:#fff;
+	}
+#left_footer li{
+	float:left;
+	margin:0 20px;
+	}
+#left_footer img{
+	width:60px; height:60px;
+	}
+
+#right_footer{
+	float:right;
+	}
+#right_footer a{ 
+	color:#fff;
+	padding:0 10px;
+	line-height: 21px;
+	font-size: 16px;
+	font-weight:bold;
+	}
+
+#footer span{
+	color:#ccc;
+	font-size: 13px;
+	margin-left: 150px;
+	}
+
+.round {
+	border-radius: 8px;
+	-ms-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
+.smalltext {
+	font-size: 12px;
+}
+
+.mediumtext {
+	font-size: 18px;
+}
+
+.bigtext {
+	font-size: 24px;
+}
+
+#banners {
+	float: right;
+	/*width: 610px;*/
+	padding-top: 25px;
+	padding-right: 55px;
+}

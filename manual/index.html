@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<title>Documentación - Clasificados para todos! </title>
+<link type="text/css" rel="stylesheet" href="../css/style.css"/>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=php&skin=sunburst"></script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div class="center">
+			<div id="logo"><img src="../media/template/vendeloyalogo.png"></div>
+			<div id="banners"><img src="../media/b468x120.gif"></div>
+		</div><!-- .center -->
+
+	</div><!-- #header -->
+	
+	<div id="roof">
+		
+			<div id="menu">
+				<a href="index.html">INICIO</a>
+				<a href="usuario.html">USUARIO</a>
+				<a href="clasificado.html">CLASIFICADO</a>
+				<a href="qr.html">MEDIA Y QR</a>
+				<a href="bd.html">BASE DE DATOS</a>
+			</div> <!-- #menu -->
+		
+	</div>
+	
+	<div id="clear"></div>
+	
+	<div id="container">
+		<div id="center_container">
+			<div id="content">
+				<h2>API de VendeloYa</h2>				
+				<p>En el menú encontrarás la forma en que se utiliza cada una de las funciones de la aplicacion</p>
+				
+				<p>Utilizando las funciones en la API puedes crear casi cualquier cosa en el sistema</p>
+				
+				<h2>Primeros Pasos ¿Cómo funciona la API?</h2>
+				
+				<p>Se tienen una serie de archivos programados en PHP en una carpeta que contiene clases con las funciones del sistema. Las funciones se encuentren dentro de las clases</p>
+				
+				<p>Cada archivo contiene funciones que son utiles a determinado aspecto del sistema, por ello se agrupan en clases</p>
+				
+				<p>Algunas clases que puedes encontrar en la carpeta CORE son:</p>
+				
+				<p>
+				- Usuario (core/usuarios.php)<br>
+				- Clasificado (core/clasificados.php)
+				</p>
+				
+				<p>Para poder usar la clase, esta debe ser inicializada</p>
+				
+				<p>Inicializar una clase es un proceso muy sencillo solo se utiliza un include en PHP (o require) que se incluya en el archivo que se genera en PHP</p>
+				
+				<p>Por ejemplo: si se está creando un archivo llamado miarchivo.php y se quiere utilizar la clase Usuario es tan sencillo como utilizar el siguiente código:</p>
+				
+				<pre class="prettyprint lang-php" id="PHP">
+&lt;?php
+
+// Incluye el archivo donde se declara la clase
+require_once('usuarios.php');
+// Inicia el uso de la clase Usuario
+$usuario1 = new Usuario();
+
+?&gt;
+				</pre>
+				
+				<p>Cuando se hace uso de la clase Usuario lo que en realidad se hace es crear un objeto que se asigna a una variable. Se analizará con mayor detalle el código anterior:</p>
+				
+				<pre class="prettyprint lang-php" id="PHP">
+&lt;?php
+
+// Aquí se incluye el uso de la clase a través del archivo que la contiene
+
+require_once('clasificados.php');
+// Inicia el uso de la clase asígnandoloa a la variable $clasificado1
+$clasificado1 = new Clasificado();
+
+?&gt;
+				</pre>
+				
+				<p>Muy bien!<br>
+				Ahora ya has dado los primero pasos pero aún hay mucho que aprender que podrás encontrar en las secciones específicas de cada clase que se encuentra en el menú</p>
+				
+			</div> <!-- #content -->
+			<div id="sidebar">
+			<div id="title">Bienvenido a la API</div>
+					<ul>
+						<li><b>API: </b> Interfaz de programación de aplicaciones (API, Application Programming Interface) es el conjunto de funciones y procedimientos (o métodos, en la programación orientada a objetos) que ofrece cierta biblioteca para ser utilizado por otro software como una capa de abstracción. Son usadas generalmente en las bibliotecas.</li>
+						<li>Así programar funciones en el sistema es genial!</li>
+					</ul>				
+			</div> <!-- #sidebar -->
+		</div> <!-- #center_conatiner -->
+	</div> <!-- #container -->
+	
+			<div id="clear"></div>	
+	
+	<div id="footer">
+		<div id="center_footer">
+			<span>VendeloYa.Net &copy; Derechos Reservados 2013</span>
+		</div> <!-- #center_footer -->
+	</div> <!-- #footer -->
+
+</div> <!-- #wrapper -->
+</body>
+</html>

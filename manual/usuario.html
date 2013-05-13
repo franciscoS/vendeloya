@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<title>Documentación - Clasificados para todos! </title>
+<link type="text/css" rel="stylesheet" href="../css/style.css"/>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=php&skin=sunburst"></script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div class="center">
+			<div id="logo"><img src="../media/template/vendeloyalogo.png"></div>
+			<div id="banners"><img src="../media/b468x120.gif"></div>
+		</div><!-- .center -->
+
+	</div><!-- #header -->
+	
+	<div id="roof">
+		
+			<div id="menu">
+				<a href="index.html">INICIO</a>
+				<a href="usuario.html">USUARIO</a>
+				<a href="clasificado.html">CLASIFICADO</a>
+				<a href="qr.html">MEDIA Y QR</a>
+				<a href="bd.html">BASE DE DATOS</a>
+			</div> <!-- #menu -->
+		
+	</div>
+	
+	<div id="clear"></div>
+	
+	<div id="container">
+		<div id="center_container">
+			<div id="content">
+				<h2 id="definicion">Clase Usuario</h2>				
+				<p>La clase Usuario se encarga de administrar las diversas caracteristicas que se pueden realizar a los usuarios que son las siguientes:</p>
+				
+				<h2 id="get">Función get('nickname')</h2>
+				
+				<p>Esta función obtiene los datos de un determinado usuario con base en su apodo o alias</p>
+				
+				<p>El alias de un usuario es escogido por el mismo y no se puede cambiar</p>
+				
+				<pre class="prettyprint lang-php" id="PHP">
+&lt;?php
+require_once('core/usuarios_model.php');
+// Crea un objeto llamado usuario1 de la clase Usuario
+$usuario1 = new Usuario();
+// Obtiene los datos del usuario llamado &quot;elbarto&quot;
+$usuario1-&gt;get('elbarto');
+?&gt;
+				</pre>
+				
+				<h2>Atributos que se obtienen de la función get('nickname')</h2>
+				
+				<p>Los atributos que se pueden obtener de la función son los siguientes:</p>
+				
+				<p class="prettyprint">idusuario y nickname son los valores mas importantes,  ambos son valores  que no se pueden cambiar y funcionan como índices en el sistema<br>
+				- idusuario (numérico)
+				- nickname (alfanumérico sin espacios)<br>
+				- password (alfanumérico)<br>
+				- nombre (alfanumérico)<br>
+				- apellidos (alfanumérico)<br>
+				- fechanacimiento (numérico, formato: AAAA-MM-DD)<br>
+				- email (alfanumérico sin espacios)<br>
+				- telefono (alfanumérico puede ser un Nextel)<br>
+				- celular (numérico)</p> 
+				
+				<p>Obtener cualquiera de los atributos relacionados con la función es muy sencillo, lo unico que se necesita es llamar el valor a través del objeto al que se asigna</p>
+				
+				<pre class="prettyprint lang-php" id="PHP">
+&lt;?php
+require_once('core/usuarios_model.php');
+// Crea un objeto llamado usuario5 de la clase Usuario
+$usuario5 = new Usuario();
+// Obtiene los datos del usuario llamado &quot;elbarto&quot;
+$usuario5-&gt;get('elbarto');
+?&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Obteniendo valores del objeto&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- Imprime &quot;elbarto&quot; --&gt;
+&lt;?php echo $usuario5-&gt;nickname ?&gt;
+&lt;!-- Imprime &quot;1&quot; --&gt;
+&lt;?php echo $usuario5-&gt;idusuario ?&gt;
+&lt;!-- Imprime &quot;Simpson&quot; que se asign&oacute; a la variable $temporal --&gt;
+&lt;?php
+$temporal = $usuario5-&gt;apellidos;
+echo &quot;$temporal&quot;;
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+				<hr>
+				
+				<h2 id="set">Función set(array())</h2>
+				
+				<p>Esta función crea un nuevo usuario a través de parámetros recibidos a través de un arreglo (array)</p>
+				
+				<p>La función recibe cualquiera de los siguientes parámetos y deben estar presentes en el areglo sin importar que se encuentren vacíos</p>
+				
+				<p class="prettyprint">El nickname es el valor mas importante pues indica cuál es el apodo del usuario, este valor no se puede cambiar y funciona como índice en el sistema<br>
+				- nickname (alfanumérico sin espacios)<br>
+				- password (alfanumérico)<br>
+				- nombre (alfanumérico)<br>
+				- apellidos (alfanumérico)<br>
+				- fechanacimiento (numérico, formato: AAAA-MM-DD)<br>
+				- email (alfanumérico sin espacios)<br>
+				- telefono (alfanumérico puede ser un Nextel)<br>
+				- celular (numérico)</p> 
+				
+				<pre class="prettyprint lang-php" id="PHP">
+&lt;?php
+// Se crea el array donde se ponen los diferentes par&aacute;metros
+// El campo telefono aunque est&aacute; vac&iacute;o se tiene que declarar, de lo contrario la API arroja un error 
+$new_user_data = array(
+    'nickname'=&gt;'ali', 'password'=&gt;'123456', 'nombre'=&gt;'Al&iacute;', 'apellidos'=&gt;'Adame', 'fechanacimiento'=&gt;'1991-12-15', 'email'=&gt;'aliadame15@gmail.com', 'telefono'=&gt;'', 'celular'=&gt;'6461308843'
+);
+// Incluye la clase usuario para que pueda ser implementada
+require_once('core/usuarios.php');
+// Crea un objeto llamado usuario3 de la clase Usuario
+$usuario3 = new Usuario();
+// Ejecuta la funcion set para el usuario3
+// Los parametros los pasa por el arreglo '$new_user_data' declarado al inicio
+$usuario3-&gt;set($new_user_data);
+// Obtiene el usuario que se acaba de agregar usando la funci&oacute;n get() y el parametro 'nickname' del arreglo que se defini&oacute;
+$usuario3-&gt;get($new_user_data['nickname']);
+// Lo anterior es como si hubiera hecho un get('ali')
+// En las siguientes lineas se imprimir&aacute;n los datos que primero se insertaron y luego se obtuvieron por la funcion get();
+?&gt;
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Obteniendo valores del objeto&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- Imprime &quot;ali&quot; --&gt;
+&lt;?php echo $usuario3-&gt;nickname ?&gt;
+&lt;!-- Obtiene el celular que asigna a variable --&gt;
+&lt;?php
+$cel = $usuario3-&gt;celular;
+?&gt;
+&lt;!-- Imprime &quot;Correo electr&oacute;nico: aliadame15@gmail.com&quot; que se asign&oacute; a la variable $correo --&gt;
+&lt;?php
+$correo = $usuario3-&gt;email;
+echo &quot;Correo electr&oacute;nico: $correo&quot;;
+?&gt;
+&lt;!-- Imprime &quot;El celular de ali es 6461308843&quot; --&gt;
+El celular de &lt;?php echo $usuario3-&gt;nickname ?&gt; es &lt;?php echo $cel ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;	
+				</pre>
+				
+				<h2 id="edit">Función edit(array())</h2>
+				
+				<p>Esta función edita un usuario existente a través de parámetros recibidos a través de un arreglo (array)</p>
+				
+				<p>La función recibe cualquiera de los siguientes parámetos y deben estar presentes en el areglo sin importar que se encuentren vacíos</p>
+				
+				<p class="prettyprint">El nickname es el valor mas importante pues indica cuál es el registro que se editará y es único por ser de tipo llave<br>
+				- nickname (alfanumérico sin espacios)<br>
+				- password (alfanumérico)<br>
+				- nombre (alfanumérico)<br>
+				- apellidos (alfanumérico)<br>
+				- fechanacimiento (numérico, formato: AAAA-MM-DD)<br>
+				- email (alfanumérico sin espacios)<br>
+				- telefono (alfanumérico puede ser un Nextel)<br>
+				- celular (numérico)</p>
+				
+			</div> <!-- #content -->
+			<div id="sidebar">
+			<div id="title">CLASE USUARIO</div>
+					<ul>
+						<li><a href="#definicion">Definición</a></li>
+						<li><a href="#get">get('nickname')</a></li>
+						<li><a href="#set">set(array())</a></li>
+					</ul>				
+			</div> <!-- #sidebar -->
+		</div> <!-- #center_conatiner -->
+	</div> <!-- #container -->
+	
+			<div id="clear"></div>	
+	
+	<div id="footer">
+		<div id="center_footer">
+			<span>VendeloYa.Net &copy; Derechos Reservados 2013</span>
+		</div> <!-- #center_footer -->
+	</div> <!-- #footer -->
+
+</div> <!-- #wrapper -->
+</body>
+</html>
