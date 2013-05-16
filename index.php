@@ -8,7 +8,7 @@
         <?php
 		/*
 require_once('core/usuarios.php');
-# Traer los datos de un usuario 
+# Traer los datos de un usuario  prueba de cambio
 $usuario1 = new Usuario();
 //$usuario1->get('elbarto');
 //print $usuario1->nombre . ' ' . $usuario1->apellidos . ' existe<br>';
