@@ -7,8 +7,8 @@
     <body>
         <?php
 		/*
-require_once('core/usuarios.php');
-# Traer los datos de un usuario  prueba de cambio
+require_once('core/usuarios.php'); la sentencia require_once incluye un documento y continua con el script en caso de que ya este incluido dicho archivo
+# Traer los datos de un usuario
 $usuario1 = new Usuario();
 //$usuario1->get('elbarto');
 //print $usuario1->nombre . ' ' . $usuario1->apellidos . ' existe<br>';
