@@ -24,6 +24,7 @@ protected $idusuario;
 public $creado;
 public $actualizado;
 public $nombreimagen;
+public $categoria;
 public $temporal;
 private $clave;
 function __construct() {
@@ -85,10 +86,11 @@ endif;
 public function get($user_data='') {
 if($user_data != ''):
 $this->query = "
- SELECT c.idclasificado, titulo, precio, preciodiv, detalles, marca, modelo, estado, c.idusuario, creado, actualizado, m.nombreimagen, nickname, email, telefono, celular
- FROM clasificados c, media m, usuarios u 
+ SELECT c.idclasificado, titulo, precio, preciodiv, detalles, marca, modelo, estado, c.idusuario, t.idcat, promo, categoria, creado, actualizado, m.nombreimagen, nickname, email, telefono, celular
+ FROM clasificados c, media m, usuarios u, categorias t 
  WHERE c.idusuario = u.idusuario
  AND c.idclasificado = m.idclasificado
+ AND c.idcat = t.idcat
  AND c.idclasificado = '$user_data'
  ";
 $this->get_results_from_query();
@@ -112,7 +114,7 @@ $$campo = $valor;
 endforeach;
 $this->query = "
  UPDATE clasificados 
- SET titulo='$titulo', precio='$precio', preciodiv='$preciodiv', detalles='$detalles', marca='$marca', modelo='$modelo', estado='$estado', idusuario='$idusuario'
+ SET titulo='$titulo', precio='$precio', preciodiv='$preciodiv', detalles='$detalles', marca='$marca', modelo='$modelo', estado='$estado', idusuario='$idusuario', idcat='$idcat', promo='$promo'
  WHERE idclasificado = $temporal
  ";
 $this->execute_single_query();
@@ -122,9 +124,9 @@ $$campo = $valor;
 endforeach;
 $this->query = "
  INSERT INTO clasificados
- (titulo, precio, preciodiv, detalles, marca, modelo, estado, idusuario, creado)
+ (titulo, precio, preciodiv, detalles, marca, modelo, estado, idusuario, idcat, promo, creado)
  VALUES
- ('$titulo', '$precio', '$preciodiv', '$detalles', '$marca', '$modelo', '$estado', '$idusuario', NOW())
+ ('$titulo', '$precio', '$preciodiv', '$detalles', '$marca', '$modelo', '$estado', '$idusuario', $idcat', $promo', NOW())
  ";
 $this->execute_single_query();
 }
@@ -152,7 +154,7 @@ foreach ($user_data as $campo=>$valor):
 $$campo = $valor;
 endforeach;
 $this->query = " 
- UPDATE clasificados SET titulo='$titulo', precio='$precio', preciodiv='$preciodiv', detalles='$detalles', marca='$marca', modelo='$modelo', estado='$estado' 
+ UPDATE clasificados SET titulo='$titulo', precio='$precio', preciodiv='$preciodiv', detalles='$detalles', marca='$marca', modelo='$modelo', estado='$estado', idcat='$idcat', promo='$promo' 
  WHERE idclasificado = '$temporal' 
  ";
 $this->execute_single_query();

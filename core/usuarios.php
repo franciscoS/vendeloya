@@ -59,14 +59,16 @@ endif;
 endif;
 }
 public function edit($user_data=array()) {
+if(array_key_exists('nickname', $user_data)):
 foreach ($user_data as $campo=>$valor):
 $$campo = $valor;
 endforeach;
 $this->query = " 
- UPDATE usuarios SET nickname='$nickname', password='$password', nombre='$nombre', apellidos='$apellidos', fechanacimiento='$fechanacimiento', email='$email', telefono='$telefono', celular='$celular'
+ UPDATE usuarios SET password='$password', nombre='$nombre', apellidos='$apellidos', fechanacimiento='$fechanacimiento', email='$email', telefono='$telefono', celular='$celular'
      WHERE nickname = '$nickname' 
  ";
 $this->execute_single_query();
+endif;
 }
 public function delete($user_val='') {
 $this->query = " 

@@ -1,5 +1,9 @@
 *{ margin: 0px; padding: 0px;font-family: arial; }
 
+body {
+	font-family: 'Carme', Verdana, Arial;
+}
+
 #wrapper{
 	width:100%;
 	background:#074266 url(../media/template/corkboard.jpg) left repeat
@@ -10,13 +14,27 @@
 }	 
 ul{
 	list-style: none;
-	}
+}
+ul .imgpremium{
+	width: 80px;
+	height: 80px;
+	float: right;
+	border-radius: 3px;
+	-ms-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	margin: 0px 10px 0px 0px;
+}
 a {
 	text-decoration: none;
 	}
 #clear{
 	clear:both;
-	}
+}
+#clear2{
+	clear:both;
+	height:5px;
+}
 
 	
 #header{
@@ -45,13 +63,16 @@ a {
 	height:38px;
 	}
 	
+#megabtn{
+	height: 26px;
+}
+	
 #menu{
-	float: right;
 	height: 26px;
 	margin: 0 auto;
 	width: 980px;
 	}
-#menu a{
+#menu a, #megabtn a{
 	display:inline-block;
 	color: #fff;
 	background:#0B610B;
@@ -73,11 +94,15 @@ a {
 	}
 #sidebar{
 	float:left;
+	width:270px;
+	margin: 10px 0px 20px 10px;
+	padding: 5px 5px 10px 5px;
+	background:#FFF;
+	}
+#sidebartrans{
+	float:left;
 	width:280px;
-	margin:10px;
-	padding-bottom: 10px;
-	background:#fff;
-
+	margin: 0px 0px 20px 10px;
 	}
 #sidebar #title{
 	line-height: 30px;
@@ -86,6 +111,7 @@ a {
 	font-size: 16px;
 	font-weight: bold;
 	background:#1E90FF;
+	color: #FFF;
 	}
 #sidebar ul{
 	list-style: none;
@@ -101,14 +127,16 @@ a {
 
 #content{
 	width:670px;
-	margin:10px 0px 0px 10px;
+	margin:10px 0px 0px 0px;
+	padding:10px;
 	background: #fff;
-	/*height:300px;*/
 	font-size:14px;
 	float:left;
 	}
 #content h2{
-	padding: 10px 0 10px 20px;
+	padding: 5px 0 5px 5px;
+	color: #045FB4;
+	border-bottom: 1px solid #045FB4;
 	}
 #content p{
 	margin:15px;
@@ -161,6 +189,7 @@ a {
 	-ms-border-radius: 8px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
+	margin: 3px 3px;
 }
 
 .smalltext {
@@ -181,3 +210,13 @@ a {
 	padding-top: 25px;
 	padding-right: 55px;
 }
+
+/* Tiny Carousel */
+#anunciospromo { height: 1%; overflow:hidden; padding: 0 0 10px; }
+#anunciospromo .viewport { float: left; width: 270px; height: 80px; overflow: hidden; position: relative; }
+#anunciospromo .buttons {}
+#anunciospromo .disable { visibility: hidden; }
+#anunciospromo .overview { list-style: none; position: absolute; padding: 0; margin: 0; width: 270px; left: 0 top: 0; }
+#anunciospromo .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 80px; width: 270px;}
+
+#loginbox { display: none; }

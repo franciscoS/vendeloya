@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
 <title>Documentación - Clasificados para todos! </title>
 <link type="text/css" rel="stylesheet" href="../css/style.css"/>
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=js&skin=sunburst"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=php&skin=sunburst"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -46,14 +46,16 @@
 				- detalles (alfanumérico)<br>
 				- marca (alfanumérico)<br>
 				- modelo (alfanumérico)<br>
-				- estado (alfanumérico)</p>
+				- estado (alfanumérico)<br>
+				- idcat (numérico 1 caracter)<br>
+				- promo (numérico 1 caracter - 0 sin promocionar- 1 promocionado)</p>
 				
 				<pre class="prettyprint lang-php" id="PHP">
 &lt;?php
 
 // Asigna datos para crear un nuevo clasificado 
 $new_clasificado_data = array(
-    'titulo'=&gt;'Mustang', 'precio'=&gt;'36000', 'preciodiv'=&gt;'1', 'detalles'=&gt;'Excelente auto restaurado y en perfectas condiciones Mustang 64 Cobra todo un clasico', 'marca'=&gt;'Ford', 'modelo'=&gt;'Mustang', 'estado'=&gt;'1964', 'idusuario'=&gt;'3', 'nombreimagen'=&gt;'mustang64.jpg'
+    'titulo'=&gt;'Mustang', 'precio'=&gt;'36000', 'preciodiv'=&gt;'1', 'detalles'=&gt;'Excelente auto restaurado y en perfectas condiciones Mustang 64 Cobra todo un clasico', 'marca'=&gt;'Ford', 'modelo'=&gt;'Mustang', 'estado'=&gt;'1964', 'idcat'=&gt;'3', 'promo'=&gt;'0' 'idusuario'=&gt;'3', 'nombreimagen'=&gt;'mustang64.jpg'
 );
 // Genera el objeto para crear el clasificado
 $clasificado3 = new Clasificado();
@@ -64,7 +66,7 @@ $clasificado3-&gt;set($new_clasificado_data);
 // En este caso sabemos que su ID es 2
 // Para editar debemos conocer el ID que se quiere editar
 $edit_clasificado_data = array(
-    'idclasificado'=&gt;'2', 'titulo'=&gt;'Mustang Cobra 64 Cl&aacute;sico', 'precio'=&gt;'30000', 'preciodiv'=&gt;'0', 'detalles'=&gt;'Excelente opci&oacute;n restaurado y en perfectas condiciones Mustang 64 Cobra todo un clasico', 'marca'=&gt;'Ford', 'modelo'=&gt;'Mustang Cobra', 'estado'=&gt;'1964'
+    'idclasificado'=&gt;'2', 'titulo'=&gt;'Mustang Cobra 64 Cl&aacute;sico', 'precio'=&gt;'30000', 'preciodiv'=&gt;'0', 'detalles'=&gt;'Excelente opci&oacute;n restaurado y en perfectas condiciones Mustang 64 Cobra todo un clasico', 'marca'=&gt;'Ford', 'modelo'=&gt;'Mustang Cobra', 'estado'=&gt;'1964', 'idcat'=&gt;'3', 'promo'=&gt;'0'
 );
 // Genera el objeto para editar el clasificado
 $clasificado4 = new Clasificado();
