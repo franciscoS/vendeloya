@@ -131,20 +131,6 @@ $this->query = "
 $this->execute_single_query();
 }
 }
-/*public function set($user_data=array()) {
-if(array_key_exists('idclasificado', $user_data)):
-$this->get($user_data['idclasificado']);
-if($user_data['idclasificado'] != $this->idclasificado):
-foreach ($user_data as $campo=>$valor):
-$$campo = $valor;
-endforeach;
-$this->query = " 
- UPDATE clasificados SET titulo='$titulo', precio='$precio', detalles='$detalles', marca='$marca', modelo='$modelo', estado='$estado', actualizado=NOW(), nombreimagen='$nombreimagen'
- ";
-$this->execute_single_query();
-endif;
-endif;
-}*/
 public function edit($user_data=array()) {
 if(array_key_exists('idclasificado', $user_data)):
 $this->get($user_data['idclasificado']);

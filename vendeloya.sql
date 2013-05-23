@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2013 a las 09:22:03
--- Versión del servidor: 5.5.27
--- Versión de PHP: 5.4.7
+-- Servidor: localhost
+-- Tiempo de generación: 23-05-2013 a las 12:15:56
+-- Versión del servidor: 5.5.16
+-- Versión de PHP: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `clasificados` (
   `Actualizado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`IdClasificado`),
   KEY `IdUsuario` (`IdUsuario`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Volcado de datos para la tabla `clasificados`
@@ -104,7 +104,10 @@ INSERT INTO `clasificados` (`IdClasificado`, `Titulo`, `Precio`, `PrecioDiv`, `D
 (6, 'Jeep Liberty 2004', 6900, 1, '6 cil\r\n4x4\r\nimportada\r\nasegurada\r\na/c frio\r\ncd mp3\r\nasientos de piel\r\ncalenton en los asientos\r\ncontroles de audio en volante\r\nelectrica\r\nllantas todo terreno 80% vida\r\nverificacion ambiental ok\r\nplacas 2013\r\nenterita sin detalles \r\nposible cambio x carro de igual valor o menor mas diferencia\r\n6461604353', 'Jeep', 'Liberty', '2004', 2, 3, 0, '2013-05-22', '2013-05-23 00:54:34'),
 (7, 'Dodge STRATUS 94', 13000, 0, 'fronterizo buen estado', 'Dodge', 'Stratus', '1994', 2, 3, 0, '2013-05-22', '2013-05-23 00:55:30'),
 (8, 'Chrysler Pacifica Touring 2005', 5650, 1, 'Recien llegada muy buena y economica la camioneta\r\n-bolsas ok \r\n-alarma de agencia \r\n-CD, MP3, A/C, toda electrica\r\n-Quemacocos\r\n-3er asiento la de lujo\r\n-rines de aluminio\r\n-puerta trasera electronica que abre y cierra con control\r\n-soy de trato llegaremos a un acuerdo con el precio...', 'Chrysler', 'Pacifica', '2005', 1, 3, 0, '2013-05-22', '2013-05-23 00:57:11'),
-(9, 'Mazda 5 2007', 6700, 1, '-76 mil millas\r\n-buenas llantas\r\n-tercer asiento\r\n-toda eléctrica, cd, a/c , sunroof\r\n-de lujo muy cómoda y económica', 'Mazda', '5', '2007', 1, 3, 0, '2013-05-22', '2013-05-23 00:58:03');
+(9, 'Mazda 5 2007', 6700, 1, '-76 mil millas\r\n-buenas llantas\r\n-tercer asiento\r\n-toda eléctrica, cd, a/c , sunroof\r\n-de lujo muy cómoda y económica', 'Mazda', '5', '2007', 1, 3, 0, '2013-05-22', '2013-05-23 00:58:03'),
+(10, 'Town Country 2003', 5000, 1, 'Nacional\r\nFacturada a su nombre \r\nExcelentes condiciones mecánicas\r\nInteriores excelentes\r\nDoble aire acondicionado \r\nBolsas de aire limpias \r\nLista para viajar\r\n$5000 dlls \r\nInf\r\nCel 151 85 88\r\nRadio 152*14*19405 ', 'Chrysler', 'Town Country', '2003', 2, 3, 0, '2013-05-23', '2013-05-23 07:47:38'),
+(11, 'Town Country 2003', 5000, 1, 'Nacional\r\nFacturada a su nombre \r\nExcelentes condiciones mecánicas\r\nInteriores excelentes\r\nDoble aire acondicionado \r\nBolsas de aire limpias \r\nLista para viajar\r\n$5000 dlls \r\nInf\r\nCel 151 85 88\r\nRadio 152*14*19405 ', 'Chrysler', 'Town Country', '2003', 2, 3, 0, '2013-05-23', '2013-05-23 07:48:29'),
+(12, 'Town Country 2003', 5000, 1, 'Nacional\r\nFacturada a su nombre \r\nExcelentes condiciones mecánicas\r\nInteriores excelentes\r\nDoble aire acondicionado \r\nBolsas de aire limpias \r\nLista para viajar\r\n$5000 dlls \r\nInf\r\nCel 151 85 88\r\nRadio 152*14*19405 ', 'Chrysler', 'Town Country', '2003', 2, 3, 0, '2013-05-23', '2013-05-23 07:49:12');
 
 -- --------------------------------------------------------
 
@@ -118,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `media` (
   `NombreImagen` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`IdImagen`),
   KEY `IdClasificado` (`IdClasificado`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Volcado de datos para la tabla `media`
@@ -131,7 +134,10 @@ INSERT INTO `media` (`IdImagen`, `IdClasificado`, `NombreImagen`) VALUES
 (6, 6, 'liberty2004.jpg'),
 (7, 7, 'stratus97.jpg'),
 (8, 8, 'touring2005.jpg'),
-(9, 9, 'mazda5.jpg');
+(9, 9, 'mazda5.jpg'),
+(10, 10, 'towncountry2003.jpg'),
+(11, 11, 'towncountry2003.jpg'),
+(12, 12, 'towncountry2003.jpg');
 
 -- --------------------------------------------------------
 

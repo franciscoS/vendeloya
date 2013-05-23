@@ -59,7 +59,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$clasificado1->set($new_clasificado_data);
 		
 		}
+		
+		require_once('core/despliegueanuncios.php');
+		$clasificado1 = new DespliegueAnuncios();
+		$clasificado1->regis();
+		$url = $clasificado1->idclasificado;
 
+		header( "Location:publicado.php?id=$url" );
 }
 ?>
 <!DOCTYPE html>
