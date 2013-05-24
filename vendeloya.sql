@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-05-2013 a las 12:15:56
+-- Tiempo de generación: 24-05-2013 a las 12:12:58
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -91,23 +91,20 @@ CREATE TABLE IF NOT EXISTS `clasificados` (
   `Actualizado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`IdClasificado`),
   KEY `IdUsuario` (`IdUsuario`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Volcado de datos para la tabla `clasificados`
 --
 
 INSERT INTO `clasificados` (`IdClasificado`, `Titulo`, `Precio`, `PrecioDiv`, `Detalles`, `Marca`, `Modelo`, `Estado`, `IdUsuario`, `IdCat`, `Promo`, `Creado`, `Actualizado`) VALUES
-(1, 'Hermosos Cachorros Labrador', 1500, 0, 'Muy bonitos, 1 mes de nacidos, excelentes acompañantes siempre fieles, los tengo en color negro y meil', '', '', '', 4, 2, 0, '2013-05-12', '2013-05-20 20:51:28'),
-(2, 'Mustang', 36000, 1, 'Excelente auto restaurado y en perfectas condiciones Mustang 64 Cobra todo un clasico', 'Ford', 'Mustang', '1964', 3, 3, 0, '2013-05-12', '2013-05-20 20:51:44'),
-(5, 'Ford Mustang 2000 Convertible', 2700, 1, 'FORD MUSTANG 2000 , AUTOMATICO , CONVERTIBLE , INTERIORES DE PIEL , TITULO -EN MANO , TEL 172 7391 ,, NEX 152*203445*2 ,,... 2700dlls .. VENDO O KAMBIO ,,,. EN EXELENTES CONDICIONES', 'Ford', 'Mustang', '2000', 1, 3, 0, '2013-05-22', '2013-05-23 00:49:27'),
-(6, 'Jeep Liberty 2004', 6900, 1, '6 cil\r\n4x4\r\nimportada\r\nasegurada\r\na/c frio\r\ncd mp3\r\nasientos de piel\r\ncalenton en los asientos\r\ncontroles de audio en volante\r\nelectrica\r\nllantas todo terreno 80% vida\r\nverificacion ambiental ok\r\nplacas 2013\r\nenterita sin detalles \r\nposible cambio x carro de igual valor o menor mas diferencia\r\n6461604353', 'Jeep', 'Liberty', '2004', 2, 3, 0, '2013-05-22', '2013-05-23 00:54:34'),
+(5, 'Ford Mustang 2000 Convertible', 2700, 1, 'FORD MUSTANG 2000\r\nAUTOMATICO\r\nCONVERTIBLE\r\nINTERIORES DE PIEL\r\nTITULO -EN MANO\r\nTEL 172 7391\r\nNEX 152*203445*2\r\nvendo o cambio', 'Ford', 'Mustang', '2000', 1, 3, 1, '2013-05-22', '2013-05-24 10:09:14'),
+(6, 'Jeep Liberty 2004', 6900, 1, '6 cil\r\n4x4\r\nimportada\r\nasegurada\r\na/c frio\r\ncd mp3\r\nasientos de piel\r\ncalenton en los asientos\r\ncontroles de audio en volante\r\nelectrica\r\nllantas todo terreno 80% vida\r\nverificacion ambiental ok\r\nplacas 2013\r\nenterita sin detalles \r\nposible cambio x carro de igual valor o menor mas diferencia\r\n6461604353', 'Jeep', 'Liberty', '2004', 2, 3, 1, '2013-05-22', '2013-05-24 06:37:29'),
 (7, 'Dodge STRATUS 94', 13000, 0, 'fronterizo buen estado', 'Dodge', 'Stratus', '1994', 2, 3, 0, '2013-05-22', '2013-05-23 00:55:30'),
-(8, 'Chrysler Pacifica Touring 2005', 5650, 1, 'Recien llegada muy buena y economica la camioneta\r\n-bolsas ok \r\n-alarma de agencia \r\n-CD, MP3, A/C, toda electrica\r\n-Quemacocos\r\n-3er asiento la de lujo\r\n-rines de aluminio\r\n-puerta trasera electronica que abre y cierra con control\r\n-soy de trato llegaremos a un acuerdo con el precio...', 'Chrysler', 'Pacifica', '2005', 1, 3, 0, '2013-05-22', '2013-05-23 00:57:11'),
+(8, 'Chrysler Pacifica Touring 2005', 5650, 1, 'Recien llegada muy buena y economica la camioneta\r\n-bolsas ok \r\n-alarma de agencia \r\n-CD, MP3, A/C, toda electrica\r\n-Quemacocos\r\n-3er asiento la de lujo\r\n-rines de aluminio\r\n-puerta trasera electronica que abre y cierra con control\r\n-soy de trato llegaremos a un acuerdo con el precio...', 'Chrysler', 'Pacifica', '2005', 1, 3, 1, '2013-05-22', '2013-05-24 06:37:09'),
 (9, 'Mazda 5 2007', 6700, 1, '-76 mil millas\r\n-buenas llantas\r\n-tercer asiento\r\n-toda eléctrica, cd, a/c , sunroof\r\n-de lujo muy cómoda y económica', 'Mazda', '5', '2007', 1, 3, 0, '2013-05-22', '2013-05-23 00:58:03'),
 (10, 'Town Country 2003', 5000, 1, 'Nacional\r\nFacturada a su nombre \r\nExcelentes condiciones mecánicas\r\nInteriores excelentes\r\nDoble aire acondicionado \r\nBolsas de aire limpias \r\nLista para viajar\r\n$5000 dlls \r\nInf\r\nCel 151 85 88\r\nRadio 152*14*19405 ', 'Chrysler', 'Town Country', '2003', 2, 3, 0, '2013-05-23', '2013-05-23 07:47:38'),
-(11, 'Town Country 2003', 5000, 1, 'Nacional\r\nFacturada a su nombre \r\nExcelentes condiciones mecánicas\r\nInteriores excelentes\r\nDoble aire acondicionado \r\nBolsas de aire limpias \r\nLista para viajar\r\n$5000 dlls \r\nInf\r\nCel 151 85 88\r\nRadio 152*14*19405 ', 'Chrysler', 'Town Country', '2003', 2, 3, 0, '2013-05-23', '2013-05-23 07:48:29'),
-(12, 'Town Country 2003', 5000, 1, 'Nacional\r\nFacturada a su nombre \r\nExcelentes condiciones mecánicas\r\nInteriores excelentes\r\nDoble aire acondicionado \r\nBolsas de aire limpias \r\nLista para viajar\r\n$5000 dlls \r\nInf\r\nCel 151 85 88\r\nRadio 152*14*19405 ', 'Chrysler', 'Town Country', '2003', 2, 3, 0, '2013-05-23', '2013-05-23 07:49:12');
+(19, 'Vendo Casa en Valle Dorado', 500000, 0, '1 Pisos / Levels\r\n3 Recámaras / Bedrooms\r\n2 Baños / Baths\r\n\r\nCocina / Kitchen\r\nSala / Living Room\r\nComedor / Dining room\r\nRejas / Window protection\r\nBardeada / Perimetral fence\r\nCochera / Garage\r\npara 1 automóviles / for 1 car(s)\r\nEstacionamiento / Parking\r\npara 0 automóviles / for 0 car(s)\r\n\r\nServicios\r\nAgua / Water\r\nDrenaje / Drainage\r\nLuz / Electricity\r\nTeléfono / Telephone lines\r\nCable / Cable', '', '', '1960', 3, 7, 0, '2013-05-23', '2013-05-24 10:12:50');
 
 -- --------------------------------------------------------
 
@@ -121,23 +118,20 @@ CREATE TABLE IF NOT EXISTS `media` (
   `NombreImagen` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`IdImagen`),
   KEY `IdClasificado` (`IdClasificado`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Volcado de datos para la tabla `media`
 --
 
 INSERT INTO `media` (`IdImagen`, `IdClasificado`, `NombreImagen`) VALUES
-(1, 1, 'labradorcachorros.jpg'),
-(2, 2, 'mustang64.jpg'),
 (5, 5, 'mustang2000.jpg'),
 (6, 6, 'liberty2004.jpg'),
 (7, 7, 'stratus97.jpg'),
 (8, 8, 'touring2005.jpg'),
 (9, 9, 'mazda5.jpg'),
 (10, 10, 'towncountry2003.jpg'),
-(11, 11, 'towncountry2003.jpg'),
-(12, 12, 'towncountry2003.jpg');
+(19, 19, 'pano1_low_out.swf');
 
 -- --------------------------------------------------------
 
@@ -158,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `Nivel` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`IdUsuario`),
   KEY `NickName` (`NickName`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Volcado de datos para la tabla `usuarios`

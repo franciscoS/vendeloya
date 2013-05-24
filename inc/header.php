@@ -1,6 +1,6 @@
 <div id="header">
 	<div class="center">
-		<div id="logo"><img src="<?php echo "http://".$_SERVER['SERVER_NAME']."/media/template/vendeloyalogo.png" ?>"></div>
+		<div id="logo"><a href="<?php echo "http://".$_SERVER['SERVER_NAME']; ?>"><img src="<?php echo "http://".$_SERVER['SERVER_NAME']."/media/template/vendeloyalogo.png" ?>" border="0"></a></div>
 		<div id="banners"><img src="<?php echo "http://".$_SERVER['SERVER_NAME']."/media/banner/468x120.gif" ?>"></div>
 	</div><!-- .center -->
 

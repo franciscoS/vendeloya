@@ -15,23 +15,19 @@
 <?php } ?>
 </div> <!-- #sidebar -->
 <div id="sidebartrans">
-<div id="megabtn" style="float:right;"><a href="#">Crea un Anuncio</a></div>
+<div id="megabtn" style="float:right;"><a href="<?php echo "http://".$_SERVER['SERVER_NAME']."/agregar.php"; ?>">Crea un Anuncio</a></div>
 <div id="megabtn"><a href="<?php echo "http://".$_SERVER['SERVER_NAME']."/registro"; ?>">&iexcl;Reg&iacute;strate!</a></div>
 </div>
 <div id="sidebar">
 <div id="title">&iquest;Qu&eacute; buscas?</div>
 <input type="text" class="round bigtext" size="10"><input type="submit" value="Buscar!" class="round bigtext">
 </div> <!-- #sidebar -->
-<div id="sidebar">
-<div id="title">Anuncios Promocionados</div>
-<div id="anunciospromo">
-<div class="viewport">
-<ul class="overview">
-<li><a href="#"><img src="http://www.ensenada.net/autos/fotos/25306_1s.jpg" class="imgpremium"><h2>Ford Ranger Nacional 4x4 $1500</h2></a></li>
-<li><a href="#"><img src="http://www.ensenada.net/autos/fotos/25301_1s.jpg" class="imgpremium"><h2>Auto Blanco $1500</h2></a></li>
-<li><a href="#"><img src="http://www.ensenada.net/autos/fotos/25303_1s.jpg" class="imgpremium"><h2>Auto Plateado $6500</h2></a></li>
-<li><a href="#"><img src="http://www.ensenada.net/autos/fotos/25301_1s.jpg" class="imgpremium"><h2>Auto Blanco 4x4 $1500</h2></a></li>
-</ul>
+<?php include("_premium.php"); ?>
+
+<div class="addthis_toolbox addthis_32x32_style addthis_default_style" style="text-align:center;margin-left:15px;float:right;" align="center"> <a class="addthis_button_facebook" style="margin:0 5px 0 0;border:none;"></a> <a class="addthis_button_twitter" style="margin:0 5px 0 0;border:none;"></a> <a class="addthis_button_google_plusone_share" style="margin:0 5px 0 0;border:none;"></a> <a class="addthis_button_pinterest_share" style="margin:0 5px 0 0;border:none;"></a> <a class="addthis_button_email" style="margin:0 5px 0 0;border:none;"></a> <a class="addthis_button_compact" style="margin:0 5px 0 0;border:none;"></a> </div><br>
+<div class="addthis_toolbox addthis_default_style " style="text-align:center;margin-left:15px;float:right;">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count" style="border:none;"></a>
+<a class="addthis_button_tweet" style="border:none;"></a>
 </div>
-</div>
-</div><!-- #sidebar -->
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-508dfd1f08f2e5ad"></script>
+<!-- AddThis Button END -->

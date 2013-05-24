@@ -43,39 +43,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<div id="content">
 				<h2>Reg&iacute;strate!</h2>
 				
-				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registro">
+				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registro" id="registro">
 				<table width="660" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
 					<td>Nombre de usuario</td>
-					<td><input type="text" name="nickname" id="nickname" class="round mediumtext" size="55"></td>
+					<td><input type="text" name="nickname" id="nickname" class="round mediumtext required" size="55"></td>
 				  </tr>
 				  <tr>
 					<td>Contraseña</td>
-					<td><input type="password" name="password" id="password" class="round mediumtext" size="55"></td>
+					<td><input type="password" name="password" id="password" class="round mediumtext required" size="55"></td>
 				  </tr>
 				  <tr>
 					<td>Nombre</td>
-					<td><input type="text" name="nombre" id="nombre" class="round mediumtext"></td>
+					<td><input type="text" name="nombre" id="nombre" class="round mediumtext required"></td>
 				  </tr>
 				  <tr>
 					<td>Apellidos</td>
-					<td><input type="text" name="apellidos" id="apellidos" class="round mediumtext"></td>
+					<td><input type="text" name="apellidos" id="apellidos" class="round mediumtext required"></td>
 				  </tr>
 				  <tr>
 					<td>Fecha de Nacimiento</td>
-					<td><input type="text" name="fechanacimiento" id="fechanacimiento" class="round mediumtext"></td>
+					<td><input type="text" name="fechanacimiento" id="fechanacimiento" class="round mediumtext trioDate"></td>
 				  </tr>
 				  <tr>
 					<td>Correo Electrónico</td>
-					<td><input type="text" name="email" id="email" class="round mediumtext"></td>
+					<td><input type="text" name="email" id="email" class="round mediumtext required"></td>
 				  </tr>
 				  <tr>
 					<td>Teléfono</td>
-					<td><input type="text" name="telefono" id="telefono" class="round mediumtext"></td>
+					<td><input type="text" name="telefono" id="telefono" class="round mediumtext required"></td>
 				  </tr>
 				  <tr>
 					<td>Celular</td>
-					<td><input type="text" name="celular" id="celular" class="round mediumtext"></td>
+					<td><input type="text" name="celular" id="celular" class="round mediumtext required"></td>
 				  </tr>
 				  <tr>
 					<td colspan="2"><input type="checkbox" name="acepto" value=""><a href="terminos.php">Acepto haber leído los términos y condiciones de VendeloYa.net</a></td>

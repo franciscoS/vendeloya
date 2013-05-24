@@ -31,7 +31,7 @@ $usuario4->delete($new_user_data['nickname']);
 print $usuario4->nombre . ' ' . $usuario4->apellidos . ' ha sido eliminado';
 */
 
-require_once('core/clasificados.php');
+//require_once('core/clasificados.php');
 /*
 $clasificado1 = new Clasificado();
 $clasificado1->getmedia('1');
@@ -71,12 +71,23 @@ $clasificado4->edit($edit_clasificado_data);
 */
 
 
-$clasificado5 = new Clasificado();
-$clasificado5->get(2);
-print_r($clasificado5);
+//$clasificado5 = new Clasificado();
+//$clasificado5->get(2);
+//print_r($clasificado5);
 /*
 $clasificado6 = new Clasificado();
 $clasificado6->delete(2);
 */
+
+require_once('core/despliegueanuncios.php');
+$anuncios = new DespliegueAnuncios();
+$anuncios->getmedia();
+print_r($anuncios);
+
+$i = 1;
+while ($i <= 10) {
+    echo "$anuncios->titulo[]";
+    echo $i++;
+}
 
 ?>

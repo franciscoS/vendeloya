@@ -4,6 +4,24 @@ body {
 	font-family: 'Carme', Verdana, Arial;
 }
 
+a:link {
+	color: #0B610B;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #0B610B;
+}
+a:hover {
+	text-decoration: none;
+	color: #0B610B;
+}
+a:active {
+	text-decoration: none;
+	color: #0B610B;
+}
+
 #wrapper{
 	width:100%;
 	background:#074266 url(../media/template/corkboard.jpg) left repeat

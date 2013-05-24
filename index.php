@@ -47,13 +47,7 @@ if (!isset($_GET['m'])) {
 			?>
 			
 				<h2>Bienvenido a VendeloYa</h2>
-				<form action="login.php" method="POST" name="login" id="login" class="mediumtext">
-				Nombre de Usuario / Correo Electr&oacute;nico:<br>
-				<input name="nickmail" type="text" size="25" class="bigtext"><br><br>
-				Contrase&ntilde;a:<br>
-				<input name="password" type="password" size="25" class="bigtext"><br>
-				<input name="login" type="submit" id="login" value="Iniciar" class="bigtext">
-				</form>
+				<?php include('inc/_ultimos.php'); ?>
 			</div> <!-- #content -->
 			<?php include('inc/sidebar.php'); ?>
 		</div> <!-- #center_conatiner -->

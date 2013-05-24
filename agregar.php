@@ -32,14 +32,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$extension = array_pop($filename);
 		$filename = implode($split_point, $filename);
 		
-		$img = new imgUploader($_FILES['clasimage']);
-		
-		$time = time();
-		
-		$thumb = $img->upload('/media/80/', $filename, 80,80);
-		$small = $img->upload('/media/150/', $filename, 150,150);		
-		$full = $img->upload_unscaled('/media/f/', $filename);
-		
+		if($extension != "swf"){
+			$img = new imgUploader($_FILES['clasimage']);
+			
+			$time = time();
+			
+			$thumb = $img->upload('/media/80/', $filename, 80,80);
+			$small = $img->upload('/media/150/', $filename, 150,150);		
+			$full = $img->upload_unscaled('/media/f/', $filename);
+		} else {
+			$path= "media/swf/".$_FILES['clasimage']['name'];
+			if($_FILES['clasimage']['error'] == 0) {
+				if(copy($_FILES['clasimage']['tmp_name'], $path)){
+				} else {
+				echo "Error";
+				}
+			}
+		}
 		require_once('core/clasificados.php');
 		# Crear un nuevo clasificado
 		$new_clasificado_data = array(
@@ -72,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-<title>Vendelo Ya - Clasificados para todos! </title>
+<title>Agregar Anuncio - Vendelo Ya - Clasificados para todos! </title>
 <?php include('inc/head.php'); ?>
 </head>
 <body>
@@ -82,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<div id="container">
 		<div id="center_container">
 			<div id="content">
-				<h2>Agregar anuncio en Autos y Motos</h2>
+				<h2>Agregar Anuncio Clasificado</h2>
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" name="formad">
 				<table width="660" border="0" cellspacing="0" cellpadding="0">
 				  <tr>

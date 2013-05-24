@@ -17,7 +17,7 @@ $clasificado2->getmedia($id);
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
 <title>Vendelo Ya - Clasificados para todos! </title>
 <?php include('../inc/head.php'); ?>
 </head>
@@ -34,6 +34,7 @@ $clasificado2->getmedia($id);
                     <td>Precio:</td>
                     <td width="80%"><?php echo $clasificado1->precio; ?> <?php if($moneda=0){echo "pesos";}else{echo "d&oacute;lares";} ?></td>
                   </tr>
+                  <?php if(($clasificado1->idcat == 3)||($clasificado1->idcat == 4)||($clasificado1->idcat == 6)||($clasificado1->idcat == 8)||($clasificado1->idcat == 9)||($clasificado1->idcat == 12)||($clasificado1->idcat == 13)||($clasificado1->idcat == 17)||($clasificado1->idcat == 19)||($clasificado1->idcat == 26)||($clasificado1->idcat == 27)){?>
                   <tr>
                     <td>Marca:</td>
                     <td><?php echo $clasificado1->marca; ?></td>
@@ -46,6 +47,7 @@ $clasificado2->getmedia($id);
                     <td>A&ntilde;o:</td>
                     <td><?php echo $clasificado1->estado; ?></td>
                   </tr>
+                  <?php } ?>
                   <tr>
                     <td>Detalles:</td>
                     <td><pre><?php echo $clasificado1->detalles; ?></pre></td>
@@ -58,11 +60,50 @@ $clasificado2->getmedia($id);
                     <td>Fecha de creaci&oacute;n:</td>
                     <td><?php echo $clasificado1->creado; ?></td>
                   </tr>
-				  <tr>
+                  <?php
+                  $filename = $clasificado2->nombreimagen;
+                  $filename = explode(".", $clasificado2->nombreimagen);
+                  # Con arraypop se obtiene el ultimo elemento que se asigna como $extension
+                  $extension = array_pop($filename);
+
+                   if($extension != "swf"){ ?>
+                  <tr>
                     <td colspan="2">
                       <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/media/f/<?php echo $clasificado2->nombreimagen; ?>" border="0" style="max-width:660px;">
                     </td>
                   </tr>
+                  <?php } else { ?>
+                  <tr>
+                    <td colspan="2">
+                      <script type='text/javascript' src='<?php echo "http://".$_SERVER['SERVER_NAME']; ?>/js/swfobject.js'></script>
+                      <script type="text/javascript">
+                      <!--
+                        
+                            var flashvars = {};
+                            var params = {};
+                            params.quality = "high";
+                            params.bgcolor = "#ffffff";
+                            params.allowscriptaccess = "sameDomain";
+                            params.allowfullscreen = "true";
+                            params.base=".";
+                            var attributes = {};
+                            attributes.id = "pano";
+                            attributes.name = "pano";
+                            attributes.align = "middle";
+                            swfobject.embedSWF(
+                              "../media/swf/<?php echo $clasificado2->nombreimagen; ?>", "flashContent", 
+                              "640", "480", 
+                              "9.0.0", "expressInstall.swf", 
+                              flashvars, params, attributes);
+                      //-->
+                      </script>
+                      <div id="flashContent">
+                        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+                      </div>
+
+                    </td>
+                  </tr>
+                  <?php } ?>
             </table>
 			</div> 
 			<!-- #content -->
