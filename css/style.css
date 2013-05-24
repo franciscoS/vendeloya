@@ -144,11 +144,11 @@ a {
 	}
 
 #footer{
-	height:130px;
+	height:150px;
 	}
 #center_footer{
 	background:#0B610B;
-	height: 130px;
+	height: 150px;
 	width: 980px;
 	margin:0 auto;
 	}
@@ -213,7 +213,7 @@ a {
 }
 
 /* Tiny Carousel */
-#anunciospromo { height: 1%; overflow:hidden; padding: 0 0 10px; }
+#anunciospromo { height: 1%; overflow:hidden; padding: 0 0 0px; }
 #anunciospromo .viewport { float: left; width: 270px; height: 80px; overflow: hidden; position: relative; }
 #anunciospromo .buttons {}
 #anunciospromo .disable { visibility: hidden; }
@@ -221,3 +221,33 @@ a {
 #anunciospromo .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 80px; width: 270px;}
 
 #loginbox { display: none; }
+
+pre {
+	word-wrap:break-word;
+}
+
+.msg {
+width: 99%;
+padding: 5px;
+margin: 3px 0px;
+color: #006600;
+border: 1px solid #006600;
+background-color: #CFFFAF;
+font-weight: bold;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+} 
+ 
+.error {
+width: 99%;
+padding: 5px;
+margin: 3px 0px;
+color: #c00;
+border: 1px solid #c00;
+background-color: #FEF1ED;
+font-weight: bold;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+}

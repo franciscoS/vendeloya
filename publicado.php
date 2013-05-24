@@ -5,17 +5,31 @@ $session1 = new Session();
 $session1->regis();
 
 $id = $_REQUEST['id'];
-$url = "http://localhost/vendeloya/publicado.php?id=";
+$url = "http://".$_SERVER['SERVER_NAME']."/anuncio/?id=";
 $id = $url.$id;
 
 // include BarcodeQR class 
 include "core/BarcodeQR.php"; 
 
+
+$msg = array();
+$err = array();
+
+if (!isset($_GET['m'])) {
+	//si se recibe ?m sin parametro
+} elseif ($_GET['m'] == '2') {
+	//si se recibe ?m sin parametro
+} elseif ($_GET['m'] == '1') {
+	$msg[] = "Anuncio publicado, aprovecha e imprime esta página! para que la escaneen con smartphones";
+} else {
+	//Se ejecuta por default
+	//No hace nada pero evita inyecciones de codigo
+}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <title>Vendelo Ya - Clasificados para todos! </title>
 <?php include('inc/head.php'); ?>
 </head>

@@ -16,7 +16,7 @@
 </div> <!-- #sidebar -->
 <div id="sidebartrans">
 <div id="megabtn" style="float:right;"><a href="#">Crea un Anuncio</a></div>
-<div id="megabtn"><a href="#">&iexcl;Reg&iacute;strate!</a></div>
+<div id="megabtn"><a href="<?php echo "http://".$_SERVER['SERVER_NAME']."/registro"; ?>">&iexcl;Reg&iacute;strate!</a></div>
 </div>
 <div id="sidebar">
 <div id="title">&iquest;Qu&eacute; buscas?</div>

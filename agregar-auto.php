@@ -36,9 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		$time = time();
 		
-		$thumb = $img->upload('/vendeloya/media/80/', $filename, 80,80);
-		$small = $img->upload('/vendeloya/media/150/', $filename, 150,150);		
-		$full = $img->upload_unscaled('/vendeloya/media/f/', $filename);
+		$thumb = $img->upload('/media/80/', $filename, 80,80);
+		$small = $img->upload('/media/150/', $filename, 150,150);		
+		$full = $img->upload_unscaled('/media/f/', $filename);
 		
 		require_once('core/clasificados.php');
 		# Crear un nuevo clasificado
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$clasificado1->regis();
 		$url = $clasificado1->idclasificado;
 
-		header( "Location:publicado.php?id=$url" );
+		header( "Location:publicado.php?id=$url&m=1" );
 }
 ?>
 <!DOCTYPE html>
@@ -82,10 +82,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<div id="container">
 		<div id="center_container">
 			<div id="content">
-				<h2>Agregar anuncio en Autos y Motos</h2>				
-				
+				<h2>Agregar anuncio en Autos y Motos</h2>
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" name="formad">
-				<table width="98%" border="0" cellspacing="0" cellpadding="0">
+				<table width="660" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
 					<td>Título</td>
 					<td><input type="text" name="titulo" id="titulo" class="round mediumtext" size="55"></td>

@@ -17,7 +17,7 @@ $clasificado2->getmedia($id);
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <title>Vendelo Ya - Clasificados para todos! </title>
 <?php include('../inc/head.php'); ?>
 </head>
@@ -29,10 +29,10 @@ $clasificado2->getmedia($id);
 		<div id="center_container">
 		  <div id="content">
 			<h2><?php echo $clasificado1->titulo; ?></h2>
-            <table width="99%" border="0" cellspacing="0" cellpadding="0">
+            <table width="660" border="0" cellspacing="0" cellpadding="0" class="mediumtext">
                   <tr>
                     <td>Precio:</td>
-                    <td width="70%"><?php echo $clasificado1->precio; ?> <?php if($moneda=0){echo "pesos";}else{echo "d&oacute;lares";} ?></td>
+                    <td width="80%"><?php echo $clasificado1->precio; ?> <?php if($moneda=0){echo "pesos";}else{echo "d&oacute;lares";} ?></td>
                   </tr>
                   <tr>
                     <td>Marca:</td>
@@ -60,12 +60,8 @@ $clasificado2->getmedia($id);
                   </tr>
 				  <tr>
                     <td colspan="2">
-					<?php
-					//print_r($clasificado2);
-					while ($datos = $clasificado2->fetch_assoc()){ ?>
-					<img src="http://localhost/vendeloya/media/f/<?php echo $datos['nombreimagen']; ?>" border="0" style="max-width:660px;">
-					<?php }	?>
-					</td>
+                      <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/media/f/<?php echo $clasificado2->nombreimagen; ?>" border="0" style="max-width:660px;">
+                    </td>
                   </tr>
             </table>
 			</div> 

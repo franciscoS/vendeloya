@@ -70,7 +70,7 @@ unset($_SESSION['usr_nvl']);
 session_unset();
 session_destroy();
 
-header("Location: http://".$_SERVER['SERVER_NAME']."/vendeloya/login.php");
+header("Location: http://".$_SERVER['SERVER_NAME']."/login.php");
 }
 public function setmedia() {
 }
@@ -97,7 +97,7 @@ public function regis(){
 		endif;		
 	} elseif($_SESSION['usr_nvl'] = $nivel) {
 	} else{
-		header("Location: http://".$_SERVER['SERVER_NAME']."/vendeloya/login.php");
+		header("Location: http://".$_SERVER['SERVER_NAME']."/login.php");
 		exit();
 	}
 }

@@ -38,7 +38,7 @@ if (($_SERVER['REQUEST_METHOD'] == 'POST') && ($_POST['login']=='Iniciar')) {
 				$_SESSION['usr_nick'] = $usr_nick;
 				$_SESSION['usr_nvl'] = $usr_nvl;
 				
-				header("Location: http://".$_SERVER['SERVER_NAME']."/vendeloya/inicio.php");
+				header("Location: http://".$_SERVER['SERVER_NAME']."/inicio.php");
 			}
 		}else{
 			//Error porque la contrasena con coincide
@@ -55,9 +55,7 @@ if (($_SERVER['REQUEST_METHOD'] == 'POST') && ($_POST['login']=='Iniciar')) {
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
 <title>Vendelo Ya - Clasificados para todos! </title>
-<link type="text/css" rel="stylesheet" href="css/style.css"/>
-<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
-<script type='text/javascript' src='../js/custom.js'></script>
+<?php include('inc/head.php'); ?>
 </head>
 <body>
 <div id="wrapper">
